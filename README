@@ -1,0 +1,13 @@
+Note: this app will only work if you run it from a webserver, or if you have a 
+browser that allows ajax calls on file:/// resources (e.g. launch Chrome with 
+--allow-file-access-from-files);
+
+This is a minor reworking of the spine "to do list" example. I took the original example
+and split it into a modular design, adding requirejs to do asynchronous module loading
+and require-cs to do coffeescript compilation when modules are loaded.
+
+I did this as a technology proof of concept for a large web app project my team is
+embarking upon. I am eager to have a simple design-time environment that doesn't 
+require a node server for every team member. 
+
+I envision optimizing/minifying the app when we push to a production environment. 
