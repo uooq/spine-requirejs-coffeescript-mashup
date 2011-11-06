@@ -1,4 +1,6 @@
 define (require, exports, module) ->
+  module.exports = Tasks
+
   Task = require("cs!src/Task")
 
   class Tasks extends Spine.Controller
@@ -38,5 +40,3 @@ define (require, exports, module) ->
     close: ->
       @el.removeClass("editing")
       @item.updateAttributes({name: @input.val()})
-      
-  module.exports = Tasks;

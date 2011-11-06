@@ -1,4 +1,6 @@
 define (require, exports, module) ->
+  module.exports = Task
+  
   class Task extends Spine.Model
     @configure "Task", "name", "done"
     
@@ -12,9 +14,3 @@ define (require, exports, module) ->
   
     @destroyDone: ->
       rec.destroy() for rec in @done()
-      
-    sayfoo: ->
-      alert 'foo'
-      
-  module.exports = Task
-      

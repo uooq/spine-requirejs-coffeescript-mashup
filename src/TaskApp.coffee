@@ -1,4 +1,6 @@
 define (require, exports, module) ->
+  module.exports = TaskApp
+
   Task = require("cs!src/Task")
   Tasks = require("cs!src/Tasks")
 
@@ -35,9 +37,6 @@ define (require, exports, module) ->
     clear: ->
       Task.destroyDone()
       
-    hi: ->
-      alert 'sdfd'
-    
     renderCount: =>
       active = Task.active().length
       @count.text(active)
@@ -47,6 +46,3 @@ define (require, exports, module) ->
         @clear.show()
       else
         @clear.hide()
-        
-  module.exports = TaskApp
-  
