@@ -1,7 +1,8 @@
 define (require, exports, module) ->
   module.exports = Tasks
 
-  Task = require("cs!src/Task")
+  Spine = require "order!src/spineModule"
+  Task = require "cs!src/Task"
 
   class Tasks extends Spine.Controller
     events:

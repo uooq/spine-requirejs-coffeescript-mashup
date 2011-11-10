@@ -1,6 +1,8 @@
 define (require, exports, module) ->
   module.exports = Task
   
+  Spine = require "order!src/spineModule"
+  
   class Task extends Spine.Model
     @configure "Task", "name", "done"
     

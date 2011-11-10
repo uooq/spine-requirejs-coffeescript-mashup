@@ -1,9 +1,23 @@
 define (require, exports, module) ->
   module.exports = TaskApp
 
-  Task = require("cs!src/Task")
-  Tasks = require("cs!src/Tasks")
+  Spine = require "order!src/spineModule"
+  Task = require "cs!src/Task"
+  Tasks = require "cs!src/Tasks"
+  
+  # this code is not part of this app, it's only meant to illustrate a problem
+  # I've found with wrapping Spine in a module and then removing the globally 
+  
+     
+  # this works fine!
+  MyManager = new Spine.Manager()
+  try 
+    # this doesn't work... somewhere in here there's a call to a Spine that is not defined.
+    MyStack = new Spine.Stack()
+  catch error
+    console.log error 
 
+  
   class TaskApp extends Spine.Controller
     events:
       "submit form":   "create"
